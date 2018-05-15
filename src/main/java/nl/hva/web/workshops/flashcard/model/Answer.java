@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @author marciofk
  */
 public class Answer implements Serializable {
+    //This is the Answer model
     
     private int id;
     private String text;
