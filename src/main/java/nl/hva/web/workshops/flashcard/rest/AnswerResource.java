@@ -14,7 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.flashcard.model.Answersome;
+import nl.hva.web.workshops.flashcard.model.Answer;
 import nl.hva.web.workshops.flashcard.model.FlashCard;
 import nl.hva.web.workshops.flashcard.model.Question;
 import nl.hva.web.workshops.flashcard.service.RepositoryService;
@@ -68,15 +68,15 @@ public class AnswerResource {
                     entity(new ClientError("Question not found for id " + questionId)).build();
         }    
         
-        // Retrieving the answersomes
-        List<Answersome> answersomes;
+        // Retrieving the answers
+        List<Answer> answers;
         if(correct) 
-            answersomes = service.getCorrectAnswersOfQuestion(question);
+            answers = service.getCorrectAnswersOfQuestion(question);
         else
-            answersomes =  service.getAllAnswersOfQuestion(question);
+            answers =  service.getAllAnswersOfQuestion(question);
         
         return Response.status(Response.Status.OK).
-                    entity(answersomes).build();
+                    entity(answers).build();
         
     }
     

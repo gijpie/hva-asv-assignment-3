@@ -1,7 +1,8 @@
 package nl.hva.web.workshops.flashcard.service;
 
 import java.util.List;
-import nl.hva.web.workshops.flashcard.model.Answersome;
+
+import nl.hva.web.workshops.flashcard.model.Answer;
 import nl.hva.web.workshops.flashcard.model.FlashCard;
 import nl.hva.web.workshops.flashcard.model.Question;
 
@@ -58,13 +59,13 @@ public interface RepositoryService {
      * @param question
      * @return 
      */
-    List<Answersome> getAllAnswersOfQuestion(Question question);
+    List<Answer> getAllAnswersOfQuestion(Question question);
     
     /**
      * Getting only correct answers from a question
      * @param question
      * @return 
      */
-    List<Answersome> getCorrectAnswersOfQuestion(Question question);
+    List<Answer> getCorrectAnswersOfQuestion(Question question);
         
 }
