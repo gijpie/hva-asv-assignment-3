@@ -9,13 +9,12 @@ import nl.hva.web.workshops.flashcard.rest.model.ClientError;
 import java.util.List;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import nl.hva.web.workshops.flashcard.model.Answer;
+import nl.hva.web.workshops.flashcard.model.Answersome;
 import nl.hva.web.workshops.flashcard.model.FlashCard;
 import nl.hva.web.workshops.flashcard.model.Question;
 import nl.hva.web.workshops.flashcard.service.RepositoryService;
@@ -69,15 +68,15 @@ public class AnswerResource {
                     entity(new ClientError("Question not found for id " + questionId)).build();
         }    
         
-        // Retrieving the answers
-        List<Answer> answers;
+        // Retrieving the answersomes
+        List<Answersome> answersomes;
         if(correct) 
-            answers = service.getCorrectAnswersOfQuestion(question);
+            answersomes = service.getCorrectAnswersOfQuestion(question);
         else
-            answers =  service.getAllAnswersOfQuestion(question);       
+            answersomes =  service.getAllAnswersOfQuestion(question);
         
         return Response.status(Response.Status.OK).
-                    entity(answers).build();
+                    entity(answersomes).build();
         
     }
     

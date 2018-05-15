@@ -6,16 +6,16 @@ import java.io.Serializable;
  * A class representing an answer
  * @author marciofk
  */
-public class Answer implements Serializable {
-    //This is the Answer model
+public class Answersome implements Serializable {
+    //This is the Answersome model
     
     private int id;
     private String text;
     private boolean correct;
     
-    public Answer() {}
+    public Answersome() {}
     
-    public Answer(int id, String text, boolean correct) {
+    public Answersome(int id, String text, boolean correct) {
         setId(id);
         setText(text);
         setCorrect(correct);
